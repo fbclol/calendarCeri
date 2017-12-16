@@ -1,10 +1,11 @@
 /* fix rtl for demo */
 .chosen-rtl .chosen-drop { left: -9000px; }
 
+body {
+    font-family: "Roboto" !important;}
 
 #top,
 #calendar.fc-unthemed {
-    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
 }
 
 #top {
@@ -29,22 +30,20 @@
 .right { float: right }
 .clear { clear: both }
 
+#calendar span.label {margin-top:5px; display:inline-block;}
+
 #calendar {
-    max-width: 1000px;
-    margin: 50px auto;
 }
 
-.label-evaluation {
-    background-color: #ee6088;
-}
 
-.label-tp {
-    background-color: #ffc696;
-}
+#calendar .passe {transition:opacity 0.3s; background-color:#888888; border:1px solid #6D6D6D; opacity:0.6;}
+#calendar .passe:hover {opacity:1;}
+#calendar .encours {background-color:#B49000; border:1px solid #9A7B00;}
+#calendar .td-cm {background-color:#32A231; border:1px solid #257D24;}
+#calendar .tp {background-color:#2B5B85; border:1px solid #224C6D;}
+#calendar .eval {background-color:#C52652; border:1px solid #991E40;}
 
-.label-passe {
-    background-color: #99e599;
-}
-.label-normal {
-    background-color: #6ba5c1;
-}
+#calendar .fc-content {padding:5px;}
+#calendar .fc-event .fc-time {font-weight:bold; margin-bottom:5px;}
+
+.tooltipevent {background-color:red;}

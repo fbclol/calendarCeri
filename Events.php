@@ -12,4 +12,15 @@ class Events
     public $start = '';
     public $end = '';
     public $type = '';
+
+
+
+    public function toString() {
+        $arr = [];
+        $arr["title"] = $this->title;
+        $arr["start"] = $this->start;
+        $arr["end"] = $this->end;
+        $arr["type"] = $this->type;
+        return json_encode($arr);
+    }
 }

@@ -42,8 +42,19 @@ body {
 #calendar .td-cm {background-color:#32A231; border:1px solid #257D24;}
 #calendar .tp {background-color:#2B5B85; border:1px solid #224C6D;}
 #calendar .eval {background-color:#C52652; border:1px solid #991E40;}
+#calendar .cm-anglais {background-color:#F5EA33; border:1px solid #FFC503;}
 
 #calendar .fc-content {padding:5px;}
 #calendar .fc-event .fc-time {font-weight:bold; margin-bottom:5px;}
 
 .tooltipevent {background-color:red;}
+
+input[type="text"] {
+    height: 30px !important;
+    margin-bottom: 0px!important;
+    width: 100px !important;
+}
+select,input {
+    width: unset !important;
+}
+

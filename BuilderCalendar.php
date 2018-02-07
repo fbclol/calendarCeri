@@ -6,6 +6,9 @@
  * Time: 12:02
  */
 date_default_timezone_set('UTC');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Methods: *');
 require_once './Events.php';
 require_once './HTTPRequest.php';
 class BuilderCalendar
@@ -126,6 +129,10 @@ class BuilderCalendar
                            $sType = 'Evaluation';
                        } else if (preg_match("/tp/i",$val) === 1) {
                            $sType = 'tp';
+                       } else if (preg_match("/ANGLAIS /i",$val) === 1) {
+                           $sType = 'anglais';
+                       } else  {
+                           $sType = "";
                        }
                        $oEvent->type  = $sType;
                        // Concaténation des mêmes cours à la suite + Détection d'un cours identique

@@ -40,7 +40,7 @@ class BuilderCalendar
                    $r = new HTTPRequest('https://partage.univ-avignon.fr/home/franck.boue@alumni.univ-avignon.fr/Emploi%20du%20temps%20de%202-M1RI,%20groupe%20M1RI-Cla1%20--%20UAPV.ics');
                    break;
                case 'm2-alt-doc-emb':
-                   $r = new HTTPRequest('https://partage.univ-avignon.fr/home/franck.boue@alumni.univ-avignon.fr/Emploi%20du%20temps%20de%202-M2IL,%20groupes%20M2-AppliEmb-alt,%20M2-DevEmb%20Appli,%20M2-ecom,%20M2-Ing%C3%A9Doc,%20M2IL-Alt%20--%20UAPV.ics');
+                   $r = new HTTPRequest('https://partage.univ-avignon.fr/home/franck.boue@alumni.univ-avignon.fr/Emploi%20du%20temps%20de%202-M2IL%20--%20UAPV.ics');
                    break;
                default:
                    $r = new HTTPRequest('https://partage.univ-avignon.fr/home/franck.boue@alumni.univ-avignon.fr/Emploi%20du%20temps%20de%202-M1IL,%20groupe%20M1IL-Alt%20--%20UAPV.ics');

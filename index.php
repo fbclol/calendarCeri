@@ -45,7 +45,7 @@ $jEvents = BuilderCalendar::createCalendar();
                         <option value="m1_alt_rism">M1 alternant RISM</option>
                     </optgroup>
                     <optgroup label="M2 - ILSEN">
-                        <option value="m2-alt-doc-emb">M2 alt doc emb</option>
+                        <option value="m2-alt-doc-emb">M2</option>
                     </optgroup>
                 </select>
             </form>

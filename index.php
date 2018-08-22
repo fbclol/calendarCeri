@@ -36,13 +36,22 @@ $jEvents = BuilderCalendar::createCalendar();
             <form id="formFormation">
                 <select id="selectFormation" data-placeholder="choisir votre formation & groupe" class="chosen-select">
                     <option value=""></option>
+                    <optgroup label="L3 - INFORMATIQUE">
+                        <option value="l3_cla1">L3 info alternant td1</option>
+                        <option value="l3_cla2">L3 info alternant td2</option>
+                        <option value="l3_cla3">L3 info alternant td3</option>
+                        <option value="l3_cla4">L3 info alternant td4</option>
+                        <option value="l3_alt5">L3 info alternant grp5</option>
+                        <option value="l3_alt6">L3 info alternant grp6</option>
+
+                    </optgroup>
                     <optgroup label="M1 - ILSEN">
                         <option value="m1_cla_ilsen">M1 classique ILSEN</option>
                         <option value="m1_alt_ilsen">M1 alternant ILSEN</option>
                     </optgroup>
                     <optgroup label="M1 - RISM">
-                        <option value="m1_cla_rism">M1 classique RISM</option>
-                        <option value="m1_alt_rism">M1 alternant RISM</option>
+                        <option value="m1_cla_sicom">M1 classique SICOM</option>
+                        <option value="m1_alt_sicom">M1 alternant SICOM</option>
                     </optgroup>
                     <optgroup label="M2 - ILSEN">
                         <option value="m2-alt-doc-emb">M2</option>

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eaef33bc-985e-4f25-bed6-c73cf5813f75" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BuilderCalendar.php" afterPath="$PROJECT_DIR$/BuilderCalendar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="calendarCeri.iws" />
@@ -44,21 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index4.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index4.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6909">
-              <caret line="329" column="0" lean-forward="false" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="style_custom.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style_custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+            <state relative-caret-position="1092">
+              <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -68,11 +59,11 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="567">
-              <caret line="47" column="57" lean-forward="false" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+              <caret line="53" column="71" lean-forward="false" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
               <folding>
-                <marker date="1518046770973" expanded="false" signature="6699:6713" ph="..." />
-                <marker date="1518046770973" expanded="true" signature="16039:16056" ph="..." />
-                <marker date="1518046770973" expanded="true" signature="16082:16097" ph="..." />
+                <marker date="1534936887199" expanded="false" signature="7269:7283" ph="..." />
+                <marker date="1534936887199" expanded="true" signature="16609:16626" ph="..." />
+                <marker date="1534936887199" expanded="true" signature="16652:16667" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,23 +89,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sweetalert2.all.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/sweetalert2.all.min.js">
+      <file leaf-file-name="loadSalleDispo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loadSalleDispo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="252">
+              <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loadSalleDispo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loadSalleDispo.php">
+      <file leaf-file-name="Events.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Events.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="336">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,8 +112,8 @@
       <file leaf-file-name="BuilderCalendar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuilderCalendar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <state relative-caret-position="528">
+              <caret line="57" column="113" lean-forward="false" selection-start-line="57" selection-start-column="113" selection-end-line="57" selection-end-column="113" />
               <folding />
             </state>
           </provider>
@@ -156,6 +145,7 @@
       <find>$jEvents</find>
       <find>var_d</find>
       <find>datepicker</find>
+      <find>salle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,9 +165,9 @@
         <option value="$PROJECT_DIR$/index.twig" />
         <option value="$PROJECT_DIR$/js/sweetalert2.min.js" />
         <option value="$PROJECT_DIR$/js/sweetalert2.all.min.js" />
-        <option value="$PROJECT_DIR$/loadSalleDispo.php" />
         <option value="$PROJECT_DIR$/css/style_custom.css" />
         <option value="$PROJECT_DIR$/index-m.php" />
+        <option value="$PROJECT_DIR$/loadSalleDispo.php" />
         <option value="$PROJECT_DIR$/BuilderCalendar.php" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
@@ -194,9 +184,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="2260" />
+    <option name="y" value="-19" />
     <option name="width" value="976" />
-    <option name="height" value="1038" />
+    <option name="height" value="882" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -213,7 +204,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -225,7 +216,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,7 +328,11 @@
       <workItem from="1517663784835" duration="154000" />
       <workItem from="1517993679332" duration="593000" />
       <workItem from="1518007987611" duration="42000" />
-      <workItem from="1518029865683" duration="15061000" />
+      <workItem from="1518029865683" duration="15454000" />
+      <workItem from="1518081126794" duration="1000" />
+      <workItem from="1518435579193" duration="62000" />
+      <workItem from="1534889993275" duration="3653000" />
+      <workItem from="1534936328489" duration="567000" />
     </task>
     <task id="LOCAL-00001" summary="salle lbre">
       <created>1518046374326</created>
@@ -353,17 +348,24 @@
       <option name="project" value="LOCAL" />
       <updated>1518046639201</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="master 2">
+      <created>1518046788471</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1518046788471</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116561000" />
+    <option name="totallyTimeSpent" value="121237000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="1911" y="-9" width="1938" height="1058" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22556391" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14769065" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13909775" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -427,14 +429,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style_custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -706,52 +700,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Events.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTTPRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1974">
-          <caret line="94" column="5" lean-forward="false" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/sweetalert2.all.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="231">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/sweetalert2.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loadSalleDispo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/sweetalert2.min.js" />
     <entry file="file://$PROJECT_DIR$/css/style_custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+        <state relative-caret-position="1092">
+          <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -772,6 +735,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HTTPRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1974">
+          <caret line="94" column="5" lean-forward="false" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Events.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuilderCalendar.php___jb_old___" />
     <entry file="file://$PROJECT_DIR$/calendar.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -780,10 +760,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuilderCalendar.php">
+    <entry file="file://$PROJECT_DIR$/loadSalleDispo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuilderCalendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="57" column="113" lean-forward="false" selection-start-line="57" selection-start-column="113" selection-end-line="57" selection-end-column="113" />
           <folding />
         </state>
       </provider>
@@ -791,11 +779,11 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
-          <caret line="47" column="57" lean-forward="false" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+          <caret line="53" column="71" lean-forward="false" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
           <folding>
-            <marker date="1518046770973" expanded="false" signature="6699:6713" ph="..." />
-            <marker date="1518046770973" expanded="true" signature="16039:16056" ph="..." />
-            <marker date="1518046770973" expanded="true" signature="16082:16097" ph="..." />
+            <marker date="1534936887199" expanded="false" signature="7269:7283" ph="..." />
+            <marker date="1534936887199" expanded="true" signature="16609:16626" ph="..." />
+            <marker date="1534936887199" expanded="true" signature="16652:16667" ph="..." />
           </folding>
         </state>
       </provider>

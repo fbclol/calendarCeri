@@ -59,6 +59,9 @@ $jEvents = BuilderCalendar::createCalendar();
                         <option value="m2-alt-ingedoc">M2 ingedoc alternant</option>
                         <option value="m2-cla-ingedoc">M2 ingedoc classique</option>
                     </optgroup>
+                    <optgroup label="M2 - SICOM">
+                        <option value="test">test</option>
+                    </optgroup>
                 </select>
             </form>
         </div>

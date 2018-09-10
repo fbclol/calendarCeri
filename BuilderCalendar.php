@@ -67,8 +67,13 @@ class BuilderCalendar
                     $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27684');
                     break;
                 case 'm2-cla-ingedoc':
-                    $r = new HTTPRequest(' https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27685');
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27685');
                     break;
+                case 'm2-alt-multi':
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27686,27781');
+                    break;
+
+
                 default:
                     $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27684');
             }

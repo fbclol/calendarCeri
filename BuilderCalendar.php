@@ -45,21 +45,24 @@ class BuilderCalendar
                 case 'l3_alt6' :
                     $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=3395');
                     break;
-               case 'm1_alt_ilsen' :
-                   $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27680');
-                   break;
-               case 'm1_alt_sicom':
-                   $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27683');
-                   break;
-               case 'm1_cla_ilsen':
-                   $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27681');
-                   break;
-               case 'm1_cla_sicom':
-                   $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27682');
-                   break;
-//               case 'm2-alt-doc-emb':
-//                   $r = new HTTPRequest('https://partage.univ-avignon.fr/home/franck.boue@alumni.univ-avignon.fr/Emploi%20du%20temps%20de%202-M2IL%20--%20UAPV.ics');
-//                   break;
+                case 'm1_alt_ilsen' :
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27680');
+                    break;
+                case 'm1_alt_sicom':
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27683');
+                    break;
+                case 'm1_cla_ilsen':
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27681');
+                    break;
+                case 'm1_cla_sicom':
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27682');
+                    break;
+                case 'm2-alt-doc-emb':
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27684');
+                    break;
+                case 'm2-cla-doc-emb':
+                    $r = new HTTPRequest(' http://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27685');
+                    break;
                 default:
                     $r = new HTTPRequest('https://partage.univ-avignon.fr/home/franck.boue@alumni.univ-avignon.fr/Emploi%20du%20temps%20de%202-M1IL,%20groupe%20M1IL-Alt%20--%20UAPV.ics');
             }

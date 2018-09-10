@@ -58,13 +58,19 @@ class BuilderCalendar
                     $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27682');
                     break;
                 case 'm2-alt-doc-emb':
-                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27684');
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27684');
                     break;
                 case 'm2-cla-doc-emb':
-                    $r = new HTTPRequest(' http://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27685');
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27685');
+                    break;
+                case 'm2-alt-ingedoc':
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27684');
+                    break;
+                case 'm2-cla-ingedoc':
+                    $r = new HTTPRequest(' https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27685');
                     break;
                 default:
-                    $r = new HTTPRequest('https://partage.univ-avignon.fr/home/franck.boue@alumni.univ-avignon.fr/Emploi%20du%20temps%20de%202-M1IL,%20groupe%20M1IL-Alt%20--%20UAPV.ics');
+                    $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27684');
             }
             $sCalendar = $r->DownloadToString();
             $nIdUniq = uniqid();

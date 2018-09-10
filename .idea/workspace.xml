@@ -58,12 +58,12 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="57" column="78" lean-forward="false" selection-start-line="57" selection-start-column="78" selection-end-line="57" selection-end-column="78" />
+            <state relative-caret-position="378">
+              <caret line="58" column="65" lean-forward="false" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
               <folding>
-                <marker date="1536571015634" expanded="false" signature="7373:7387" ph="..." />
-                <marker date="1536571015634" expanded="true" signature="16713:16730" ph="..." />
-                <marker date="1536571015634" expanded="true" signature="16756:16771" ph="..." />
+                <marker date="1536571960728" expanded="false" signature="7538:7552" ph="..." />
+                <marker date="1536571960728" expanded="true" signature="16878:16895" ph="..." />
+                <marker date="1536571960728" expanded="true" signature="16921:16936" ph="..." />
               </folding>
             </state>
           </provider>
@@ -112,8 +112,8 @@
       <file leaf-file-name="BuilderCalendar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuilderCalendar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+            <state relative-caret-position="357">
+              <caret line="68" column="36" lean-forward="false" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -333,7 +333,7 @@
       <workItem from="1518435579193" duration="62000" />
       <workItem from="1534889993275" duration="3653000" />
       <workItem from="1534936328489" duration="953000" />
-      <workItem from="1536570655537" duration="366000" />
+      <workItem from="1536570655537" duration="1302000" />
     </task>
     <task id="LOCAL-00001" summary="salle lbre">
       <created>1518046374326</created>
@@ -360,7 +360,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121989000" />
+    <option name="totallyTimeSpent" value="122925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -373,7 +373,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33294255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33294255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -663,14 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuilderCalendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index5.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3360">
@@ -679,14 +671,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/BuilderCalendar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="57" column="78" lean-forward="false" selection-start-line="57" selection-start-column="78" selection-end-line="57" selection-end-column="78" />
+          <caret line="68" column="36" lean-forward="false" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="58" column="65" lean-forward="false" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
           <folding>
-            <marker date="1536571015634" expanded="false" signature="7373:7387" ph="..." />
-            <marker date="1536571015634" expanded="true" signature="16713:16730" ph="..." />
-            <marker date="1536571015634" expanded="true" signature="16756:16771" ph="..." />
+            <marker date="1536571960728" expanded="false" signature="7538:7552" ph="..." />
+            <marker date="1536571960728" expanded="true" signature="16878:16895" ph="..." />
+            <marker date="1536571960728" expanded="true" signature="16921:16936" ph="..." />
           </folding>
         </state>
       </provider>

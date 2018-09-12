@@ -195,8 +195,8 @@ class BuilderCalendar
                         $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27682');
                         break;
                     case 'm2-alt-doc-emb':
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions');
-//                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27684');
+//                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions');
+                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27684');
                         break;
                     case 'm2-cla-doc-emb':
                         $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27685');

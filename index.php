@@ -26,6 +26,7 @@ $jEvents = BuilderCalendar::createCalendar();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/datepicker.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
@@ -221,6 +222,7 @@ $jEvents = BuilderCalendar::createCalendar();
 <script src="./js/bootstrap-datepicker.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="./js/sweetalert2.all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 <script type="text/javascript">
@@ -311,6 +313,22 @@ $jEvents = BuilderCalendar::createCalendar();
             });
         });
 
+
+
+        $.ajax({
+            url: "fileFormation.php",
+            data: {formation: $('#selectFormation option:selected').val()},
+            type: "POST",
+            dataType: 'html',
+            success: function (e) {
+                console.log(e);
+
+                toastr.success(e,"Info :")
+            },
+            error: function (e) {
+                console.log(JSON.stringify(e));
+            }
+        });
 
         $('#datepicker').datepicker();
         if ($('#datepicker').datepicker().val() == '') {

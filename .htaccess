@@ -1,7 +1,17 @@
-AuthUserFile .htpasswd
-AuthType Basic
-AuthName "My Secret Page"
+SetEnvIf Request_URI ^/admin.php require_auth=true
 
-<Files "admin.php">
-  Require valid-user
-</Files>
+# Auth stuff
+AuthUserFile /var/www/html/.htpasswd
+AuthName "Password Protected"
+AuthType Basic
+
+# Setup a deny/allow
+Order Deny,Allow
+# Deny from everyone
+Deny from all
+# except if either of these are satisfied
+Satisfy any
+# 1. a valid authenticated user
+Require valid-user
+# or 2. the "require_auth" var is NOT set
+Allow from env=!require_auth

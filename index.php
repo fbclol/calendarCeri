@@ -7,9 +7,12 @@
  */
 
 require_once './BuilderCalendar.php';
+require_once './BuilderFormation.php';
 
-$jEvents = BuilderCalendar::createCalendar();
-//todo : faire un ficher temporaire
+$oBuilderCalendar  = new BuilderCalendar("./listFormations.json");
+$jEvents           = $oBuilderCalendar->createCalendar();
+$oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +31,21 @@ $jEvents = BuilderCalendar::createCalendar();
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src='./js/moment.min.js'></script>
+    <script src='./js/fullcalendar.min.js'></script>
+    <script src='./js/locale-all.js'></script>
+    <script src='./js/theme-chooser.js'></script>
+    <script src='./js/jquery.qtip.min.js'></script>
+    <script src="./js/chosen.jquery.js"></script>
+    <script src="./js/bootstrap-datepicker.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./js/sweetalert2.all.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
 </head>
 <body>
 
@@ -36,195 +54,74 @@ $jEvents = BuilderCalendar::createCalendar();
         <div>
             <form id="formFormation">
                 <select id="selectFormation" data-placeholder="choisir votre formation & groupe" class="chosen-select">
-                    <option value=""></option>
-                    <optgroup label="L3 - INFORMATIQUE">
-                        <option value="l3_cla1">L3 info alternant td1</option>
-                        <option value="l3_cla2">L3 info alternant td2</option>
-                        <option value="l3_cla3">L3 info alternant td3</option>
-                        <option value="l3_cla4">L3 info alternant td4</option>
-                        <option value="l3_alt5">L3 info alternant grp5</option>
-                        <option value="l3_alt6">L3 info alternant grp6</option>
-
-                    </optgroup>
-                    <optgroup label="M1 - ILSEN">
-                        <option value="m1_cla_ilsen">M1 classique ILSEN</option>
-                        <option value="m1_alt_ilsen">M1 alternant ILSEN</option>
-                    </optgroup>
-                    <optgroup label="M1 - RISM">
-                        <option value="m1_cla_sicom">M1 classique SICOM</option>
-                        <option value="m1_alt_sicom">M1 alternant SICOM</option>
-                    </optgroup>
-                    <optgroup label="M2 - ILSEN">
-                        <option value="m2-alt-doc-emb">M2 e-com alternant</option>
-                        <option value="m2-cla-doc-emb">M2 e-com classique</option>
-                        <option value="m2-alt-ingedoc">M2 ingedoc alternant</option>
-                        <option value="m2-cla-ingedoc">M2 ingedoc classique</option>
-                    </optgroup>
-                    <optgroup label="M2 - SICOM">
-                        <option value="m2-alt-multi">M2 multi alternant</option>
-                    </optgroup>
+                    <?= $oBuilderFormation->toHTMLOption() ?>
                 </select>
             </form>
         </div>
     </div>
     <div class="right text-center">
-            <div class="col-md-2">
-                <span class="label label-warning">Salle dispo</span>
-                <a id="buttonAfficherSalle">Afficher</a>
-            </div>
-            <div class="col-md-3">
-                <select id="nomSite">
-                    <option value="CERI" class="optionSalle">CERI</option>
-                    <option value="Agrosciences" class="optionSalle">Agrosciences</option>
-                    <option value="Centre-ville" class="optionSalle">Centre-ville</option>
-                    <option value="IUT" class="optionSalle">IUT</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <input type="text" id="datepicker" class="hasDatepicker">
-            </div>
-            <div class="col-md-2">
-                <select id="debut">
-                    <option value="8">8h</option>
-                    <option value="8.30">8h30</option>
-                    <option value="9">9h</option>
-                    <option value="9.30">9h30</option>
-                    <option value="10">10h</option>
-                    <option value="10.30">10h30</option>
-                    <option value="11">11h</option>
-                    <option value="11.30">11h30</option>
-                    <option value="12">12h</option>
-                    <option value="12.30">12h30</option>
-                    <option value="13">13h</option>
-                    <option value="13.30">13h30</option>
-                    <option value="14">14h</option>
-                    <option value="14.30">14h30</option>
-                    <option value="15">15h</option>
-                    <option value="15.30">15h30</option>
-                    <option value="16">16h</option>
-                    <option value="16.30">16h30</option>
-                    <option value="17">17h</option>
-                    <option value="17.30">17h30</option>
-                    <option value="18">18h</option>
-                    <option value="18.30">18h30</option>
-                    <option value="19">19h</option>
-                    <option value="19.30">19h30</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <select id="duree">
-                    <option value="1.5">1h30</option>
-                    <option value="3">3h00</option>
-                    <option value="4.5">4h30</option>
-                    <option value="6">6h00</option>
-                </select>
-            </div>
-
-
-
-
-
-
-
-
-
-        <!--        <div id="theme-system-selector" class="selector">-->
-        <!--            Theme System:-->
-        <!--            <select>-->
-        <!--                <option value="bootstrap3" selected="">Bootstrap 3</option>-->
-        <!--                <option value="jquery-ui">jQuery UI</option>-->
-        <!--                <option value="standard">unthemed</option>-->
-        <!--            </select>-->
-        <!--        </div>-->
-
-        <!--        <div data-theme-system="bootstrap3" class="selector" style="">-->
-        <!--            Theme Name:-->
-        <!---->
-        <!--            <select>-->
-        <!--                <option value="">Default</option>-->
-        <!--                <option value="cosmo">Cosmo</option>-->
-        <!--                <option value="cyborg">Cyborg</option>-->
-        <!--                <option value="darkly">Darkly</option>-->
-        <!--                <option value="flatly">Flatly</option>-->
-        <!--                <option value="journal" selected="">Journal</option>-->
-        <!--                <option value="lumen">Lumen</option>-->
-        <!--                <option value="paper">Paper</option>-->
-        <!--                <option value="readable">Readable</option>-->
-        <!--                <option value="sandstone">Sandstone</option>-->
-        <!--                <option value="simplex">Simplex</option>-->
-        <!--                <option value="slate">Slate</option>-->
-        <!--                <option value="solar">Solar</option>-->
-        <!--                <option value="spacelab">Spacelab</option>-->
-        <!--                <option value="superhero">Superhero</option>-->
-        <!--                <option value="united">United</option>-->
-        <!--                <option value="yeti">Yeti</option>-->
-        <!--            </select>-->
-        <!--        </div>-->
-        <!---->
-        <!--        <div data-theme-system="jquery-ui" class="selector" style="display: none;">-->
-        <!--            Theme Name:-->
-        <!---->
-        <!--            <select>-->
-        <!--                <option value="black-tie">Black Tie</option>-->
-        <!--                <option value="blitzer">Blitzer</option>-->
-        <!--                <option value="cupertino" selected="">Cupertino</option>-->
-        <!--                <option value="dark-hive">Dark Hive</option>-->
-        <!--                <option value="dot-luv">Dot Luv</option>-->
-        <!--                <option value="eggplant">Eggplant</option>-->
-        <!--                <option value="excite-bike">Excite Bike</option>-->
-        <!--                <option value="flick">Flick</option>-->
-        <!--                <option value="hot-sneaks">Hot Sneaks</option>-->
-        <!--                <option value="humanity">Humanity</option>-->
-        <!--                <option value="le-frog">Le Frog</option>-->
-        <!--                <option value="mint-choc">Mint Choc</option>-->
-        <!--                <option value="overcast">Overcast</option>-->
-        <!--                <option value="pepper-grinder">Pepper Grinder</option>-->
-        <!--                <option value="redmond">Redmond</option>-->
-        <!--                <option value="smoothness">Smoothness</option>-->
-        <!--                <option value="south-street">South Street</option>-->
-        <!--                <option value="start">Start</option>-->
-        <!--                <option value="sunny">Sunny</option>-->
-        <!--                <option value="swanky-purse">Swanky Purse</option>-->
-        <!--                <option value="trontastic">Trontastic</option>-->
-        <!--                <option value="ui-darkness">UI Darkness</option>-->
-        <!--                <option value="ui-lightness">UI Lightness</option>-->
-        <!--                <option value="vader">Vader</option>-->
-        <!--            </select>-->
-        <!--        </div>-->
-        <!--        <span id="loading" style="display: none;">loading theme...</span>-->
+        <div class="col-md-2">
+            <span class="label label-warning">Salle dispo</span>
+            <a id="buttonAfficherSalle">Afficher</a>
+        </div>
+        <div class="col-md-3">
+            <select id="nomSite">
+                <option value="CERI" class="optionSalle">CERI</option>
+                <option value="Agrosciences" class="optionSalle">Agrosciences</option>
+                <option value="Centre-ville" class="optionSalle">Centre-ville</option>
+                <option value="IUT" class="optionSalle">IUT</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <input type="text" id="datepicker" class="hasDatepicker">
+        </div>
+        <div class="col-md-2">
+            <select id="debut">
+                <option value="8">8h</option>
+                <option value="8.30">8h30</option>
+                <option value="9">9h</option>
+                <option value="9.30">9h30</option>
+                <option value="10">10h</option>
+                <option value="10.30">10h30</option>
+                <option value="11">11h</option>
+                <option value="11.30">11h30</option>
+                <option value="12">12h</option>
+                <option value="12.30">12h30</option>
+                <option value="13">13h</option>
+                <option value="13.30">13h30</option>
+                <option value="14">14h</option>
+                <option value="14.30">14h30</option>
+                <option value="15">15h</option>
+                <option value="15.30">15h30</option>
+                <option value="16">16h</option>
+                <option value="16.30">16h30</option>
+                <option value="17">17h</option>
+                <option value="17.30">17h30</option>
+                <option value="18">18h</option>
+                <option value="18.30">18h30</option>
+                <option value="19">19h</option>
+                <option value="19.30">19h30</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <select id="duree">
+                <option value="1.5">1h30</option>
+                <option value="3">3h00</option>
+                <option value="4.5">4h30</option>
+                <option value="6">6h00</option>
+            </select>
+        </div>
     </div>
     <div class="clear"></div>
 </div>
 
-
-
-
-
 <div class="container-fluid" style="margin-top: 20px;">
     <div class="row">
-
         <div id='calendar' class='col-lg-10 col-lg-offset-1 col-sm-12'></div>
     </div>
 </div>
 
 
-
-
-
-
-<script src="./js/jquery-3.1.1.min.js"></script>
-<script src='./js/moment.min.js'></script>
-<script src='./js/fullcalendar.min.js'></script>
-<script src='./js/locale-all.js'></script>
-<script src='./js/theme-chooser.js'></script>
-<script src='./js/jquery.qtip.min.js'></script>
-<script src="./js/chosen.jquery.js"></script>
-<script src="./js/bootstrap-datepicker.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="./js/sweetalert2.all.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         // Votre code ici avec les appels à la fonction $()
@@ -296,10 +193,9 @@ $jEvents = BuilderCalendar::createCalendar();
         }
         $("#selectFormation").chosen({no_results_text: "Oops, nothing found!"});
         $('#selectFormation').on('change', function (evt, params) {
-//        console.log(params.selected.toString());
+
             $.ajax({
                 url: "formationAjax.php",
-//            data: "formation="+params.selected,
                 data: {formation: $('#selectFormation option:selected').val()},
                 type: "POST",
                 dataType: 'html',
@@ -312,8 +208,6 @@ $jEvents = BuilderCalendar::createCalendar();
                 }
             });
         });
-
-
 
         $.ajax({
             url: "fileFormation.php",
@@ -360,8 +254,6 @@ $jEvents = BuilderCalendar::createCalendar();
             var year = $('#datepicker').datepicker().val().slice( 6 );
             var date = day+'-'+month+'-'+year;
 
-
-
             $.ajax({
                 type: 'POST',
                 crossDomain: true,
@@ -388,12 +280,8 @@ $jEvents = BuilderCalendar::createCalendar();
                 error: function(data) { console.log(data); }
             }).done(function( data ) {
 
-
             });
         });
-
-
-
     });
 </script>
 </body>

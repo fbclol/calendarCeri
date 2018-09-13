@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: franck
- * Date: 07/02/2018
- * Time: 22:04
- */
-require_once './HTTPRequest.php';
 
+require_once './HTTPRequest.php';
 
 $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/loadSalleDispo?site='.$_POST["site"].'&date='.$_POST["date"].'&duree='.$_POST["duree"].'&debut='.$_POST["debut"].'');
 

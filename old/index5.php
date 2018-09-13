@@ -221,11 +221,11 @@ class HTTPRequest
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" xml:lang="fr" lang="fr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/font-awesome.min.css" >
-    <link rel='stylesheet' href='./css/fullcalendar.min.css' />
-    <link rel='stylesheet' href='./css/jquery.qtip.min.css' />
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" >
+    <link rel='stylesheet' href='../css/fullcalendar.min.css' />
+    <link rel='stylesheet' href='../css/jquery.qtip.min.css' />
     <!--    <link rel="stylesheet" href="./node_modules/chosen-js/chosen.css">-->
     <!--      version + récente-->
 
@@ -363,12 +363,12 @@ class HTTPRequest
 
 </body>
 
-<script src="./js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src='./js/moment.min.js'></script>
-<script src='./js/fullcalendar.min.js'></script>
-<script src='./js/locale-all.js'></script>
-<script src='./js/theme-chooser.js'></script>
-<script src='./js/jquery.qtip.min.js'></script>
+<script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src='../js/moment.min.js'></script>
+<script src='../js/fullcalendar.min.js'></script>
+<script src='../js/locale-all.js'></script>
+<script src='../js/theme-chooser.js'></script>
+<script src='../js/jquery.qtip.min.js'></script>
 <!--<script src="./node_modules/chosen-js/chosen.jquery.js" type="text/javascript"></script>-->
 
 <script type="text/javascript">

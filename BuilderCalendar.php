@@ -1,29 +1,34 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: franck
- * Date: 16/12/2017
- * Time: 12:02
- */
+
 date_default_timezone_set('UTC');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
 header('Access-Control-Allow-Methods: *');
 require_once './Events.php';
 require_once './HTTPRequest.php';
+require_once './BuilderFormation.php';
+
 class BuilderCalendar
 {
+    public $oBuilderFormation ;
+    public $aFormations ;
+
+    public function __construct($name)
+    {
+        $this->oBuilderFormation = new BuilderFormation($name);
+        $this->aFormations       = $this->oBuilderFormation->aFormations;
+    }
 
     public static function setContentFile($sFormation,$sCalendar) {
         $nIdUniq = uniqid();
-        $handle = fopen("./calendar" . $sFormation . ".txt", "w+");
+        $handle = fopen("./event_cal_txt/calendar_" . $sFormation . ".txt", "w+");
         fwrite($handle, $sCalendar);
         fclose($handle);
     }
 
     public static function getContentFile($sFormation) {
         /*Ouverture du fichier en lecture seule*/
-        $handle = fopen("./calendar".$sFormation.".txt", "r");
+        $handle = fopen("./event_cal_txt/calendar_".$sFormation.".txt", "r");
         $sCalendar = '';
         /*Si on a réussi à ouvrir le fichier*/
         if ($handle) {
@@ -147,87 +152,28 @@ class BuilderCalendar
         return $aEvents;
     }
 
-
-    /**
-     * @return string
-     */
-    public static function createCalendar()
+    public  function createCalendar()
     {
-        #usage:
-
-        if (array_key_exists('formation', $_COOKIE) === false) {
-            // default
-//    setcookie("theme", 'journal');
-//    setcookie("formation", 'm1_alt_ilsen');
-//    $_SESSION['theme']     = 'journal';
-//    $_SESSION['formation'] = 'm1_ilsen_alt';
-        } else {
+        if (!array_key_exists('formation', $_COOKIE) === false) {
             try {
-                switch ($_COOKIE['formation']) {
-                    case 'l3_cla1' :
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=3390');
-                        break;
-                    case 'l3_cla2' :
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=3391');
-                        break;
-                    case 'l3_cla3' :
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=3392');
-                        break;
-                    case 'l3_cla4' :
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=3393');
-                        break;
-                    case 'l3_alt5' :
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=3394');
-                        break;
-                    case 'l3_alt6' :
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=3395');
-                        break;
-                    case 'm1_alt_ilsen' :
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27680');
-                        break;
-                    case 'm1_alt_sicom':
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27683');
-                        break;
-                    case 'm1_cla_ilsen':
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27681');
-                        break;
-                    case 'm1_cla_sicom':
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27682');
-                        break;
-                    case 'm2-alt-doc-emb':
-//                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions');
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27684');
-                        break;
-                    case 'm2-cla-doc-emb':
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27775,27685');
-                        break;
-                    case 'm2-alt-ingedoc':
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27684');
-                        break;
-                    case 'm2-cla-ingedoc':
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27685');
-                        break;
-                    case 'm2-alt-multi':
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27686,27781');
-                        break;
-                    default:
-                        $r = new HTTPRequest('https://accueil-ent2.univ-avignon.fr/edt/exportAgendaUrl?tdOptions=27774,27684');
-                }
-                $sCalendar = $r->DownloadToString();
+                $aUrlIndexName = array_column($this->aFormations, 'export_url','name');
+                $r             = new HTTPRequest($aUrlIndexName[$_COOKIE['formation']]);
+                $sCalendar     = $r->DownloadToString();
             } catch (Exception $e) {
                 $sCalendar = null;
             }
 
             if ($sCalendar == "" || is_null($sCalendar)) {
-                // todo : uniquement l'ouverture du tmp
+                // uniquement l'ouverture du tmp
                 $aEvents = self::getEvents($_COOKIE['formation']);
             } else {
-                //todo: écrire dans le un fichier puis ouverture
+                // écrire dans le un fichier puis ouverture
                 self::setContentFile($_COOKIE['formation'],$sCalendar);
                 $aEvents = self::getEvents($_COOKIE['formation']);
             }
             return json_encode($aEvents);
         }
+        return "";
     }
 }
 

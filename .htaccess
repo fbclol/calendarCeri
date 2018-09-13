@@ -1,0 +1,7 @@
+AuthUserFile .htpasswd
+AuthType Basic
+AuthName "My Secret Page"
+
+<Files "admin.php">
+  Require valid-user
+</Files>

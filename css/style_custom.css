@@ -49,7 +49,7 @@ body {
 
 .tooltipevent {background-color:red;}
 
-input[type="text"] {
+input[type="text"] #datepicker {
     height: 30px !important;
     margin-bottom: 0px!important;
     width: 100px !important;
@@ -58,3 +58,423 @@ select,input {
     width: unset !important;
 }
 
+/** Utility class */
+.floatLeft {
+    float: left!important;
+}
+
+.no-float{
+    float: none !important;
+}
+
+.floatRight {
+    float: right!important;
+}
+
+.no-paddingTop {
+    padding-top: 0 !important;
+}
+
+.no-paddingBottom {
+    padding-bottom: 0 !important;
+}
+
+.padding0 {
+    padding: 0 !important;
+}
+
+.padding5 {
+    padding: 5px !important;
+}
+
+.padding10 {
+    padding: 10px !important;
+}
+
+.padding12 {
+    padding: 12px !important;
+}
+
+.padding18 {
+    padding: 18px !important;
+}
+
+.paddingLeft2 {
+    padding-left: 2px !important;
+}
+
+.paddingLeft5 {
+    padding-left: 5px !important;
+}
+
+.paddingLeft10 {
+    padding-left: 10px !important;
+}
+
+.paddingLeft15 {
+    padding-left: 15px !important;
+}
+
+.paddingLeft20 {
+    padding-left: 20px !important;
+}
+.paddingLeft27 {
+    padding-left: 27px !important;
+}
+.paddingLeft30 {
+    padding-left: 30px !important;
+}
+
+.paddingLeft40 {
+    padding-left: 40px !important;
+}
+.paddingLeft42 {
+    padding-left: 42px !important;
+}
+
+.paddingRight0 {
+    padding-right: 0px !important;
+}
+
+.paddingRight5 {
+    padding-right: 5px !important;
+}
+
+.paddingRight10 {
+    padding-right: 10px !important;
+}
+
+.paddingRight20 {
+    padding-right: 20px !important;
+}
+
+.paddingRight30 {
+    padding-right: 30px !important;
+}
+
+.paddingRight40 {
+    padding-right: 40px !important;
+}
+
+.paddingRight42 {
+    padding-right: 42px !important;
+}
+.paddingTop20 {
+    padding-top: 20px !important;
+}
+
+.paddingTop5 {
+    padding-top: 5px !important;
+}
+
+.paddingTop10 {
+    padding-top: 10px !important;
+}
+
+.paddingTop15 {
+    padding-top: 15px !important;
+}
+
+.paddingTop25 {
+    padding-top: 25px !important;
+}
+
+.paddingBottom40 {
+    padding-bottom: 40px !important;
+}
+
+.paddingBottom5 {
+    padding-bottom: 5px !important;
+}
+
+.paddingBottom10 {
+    padding-bottom: 10px !important;
+}
+
+.paddingBottom15 {
+    padding-bottom: 15px !important;
+}
+
+.paddingBottom20 {
+    padding-bottom: 20px !important;
+}
+
+.margin0 {
+    margin: 0 !important;
+}
+
+.marginLeft2 {
+    margin-left: 2px !important;
+}
+
+.marginLeft5 {
+    margin-left: 5px !important;
+}
+
+.marginLeft10 {
+    margin-left: 10px !important;
+}
+
+.marginLeft20 {
+    margin-left: 20px !important;
+}
+
+.marginLeft30 {
+    margin-left: 30px !important;
+}
+
+.marginLeft300 {
+    margin-left: 300px !important;
+}
+
+.marginTop5 {
+    margin-top: 5px !important;
+}
+
+.marginTop10 {
+    margin-top: 10px !important;
+}
+
+.marginTop20 {
+    margin-top: 20px !important;
+}
+
+.marginTop25 {
+    margin-top: 25px !important;
+}
+
+.marginTop30 {
+    margin-top: 30px !important;
+}
+
+.marginTop60 {
+    margin-top: 60px !important;
+}
+
+.marginRight60 {
+    margin-right: 60px !important;
+}
+
+.marginRight10 {
+    margin-right: 10px !important;
+}
+
+.marginRight20 {
+    margin-right: 20px !important;
+}
+
+.marginRight5 {
+    margin-right: 5px !important;
+}
+
+.marginRight2 {
+    margin-right: 2px !important;
+}
+
+.marginBottom2 {
+    margin-bottom: 2px !important;
+}
+
+.marginBottom5 {
+    margin-bottom: 5px !important;
+}
+
+.marginBottom10 {
+    margin-bottom: 10px !important;
+}
+
+.fontSize12 {
+    font-size: 12px !important;
+}
+
+.fontSize13 {
+    font-size: 13px !important;
+}
+
+.fontSize16 {
+    font-size: 16px !important;
+}
+
+.positionRelative {
+    position: relative !important;
+}
+
+.positionAbsolute {
+    position: absolute !important;
+}
+
+.verticalAlignMiddle {
+    vertical-align: middle !important;
+}
+
+.verticalAlignBottom {
+    vertical-align: bottom !important;
+}
+
+.verticalAlignTop {
+    vertical-align: top !important;
+}
+
+.verticalAlignSuper {
+    vertical-align: super !important;
+}
+
+.colorRed {
+    color: #ed5565 !important;
+}
+
+.colorOrange {
+    color: #CE8735 !important;
+}
+
+.colorGreen {
+    color: #199d82 !important;
+}
+
+.autoSizeInput {
+    resize: horizontal !important;
+    width: 100% !important;
+}
+
+.colorBlueIcon {
+    color:#337AB7 !important;
+}
+
+.checkbox-info input[type="checkbox"]:checked + label::before, .checkbox-info input[type="radio"]:checked + label::before {
+    background-color: #337AB7 !important;
+    border-color: #337AB7 !important;
+}
+
+.reordered {
+    color:#337AB7 !important;
+}
+
+.nowNewColumn{
+    background-color: #d1dff5;
+}
+
+.fontSize11 {
+    font-size: 11px !important;
+}
+
+.autoSpace {
+    white-space: normal;!important;
+}
+.textInitial {
+    text-transform: initial;!important;
+}
+
+
+.labelCenterVertical {
+    height: 24px; !important;
+    line-height: 19px; !important;
+}
+
+
+.panelVerticalGris {
+    border-right: 2px solid #e7eaec;
+}
+/*.drag_drop:after {*/
+/*content: "\f047";*/
+/*font-family: FontAwesome;*/
+/*font-weight: normal;*/
+/*font-style: normal;*/
+/*!*margin:0px 0px 0px 70px;*!*/
+/*text-decoration:none;*/
+/*float: right;*/
+/*}*/
+
+.colorStep1 {
+    color: #8DD0E9 !important;
+}
+
+.colorStep2 {
+    color: #6CC2F3 !important;
+}
+
+.colorStep3 {
+    color:#2588DC !important;
+}
+
+.colorStep4 {
+    color: #529AF3 !important;
+}
+
+.colorStep5 {
+    color: #2269E9 !important;
+}
+
+.note-popover.popover.in.note-hint-popover {
+    z-index: 99999!important;
+}
+.dropdown-menu.note-check.dropdown-categories {
+    height: 150px;
+    overflow-y: scroll;
+}
+
+.green-bg {
+    background-color: #8DD0E9 !important;
+}
+
+.top-navigation .navbar-brand {
+    background: #C10019!important;
+}
+.ibox-title {
+    border-top-color: #C10019!important;
+}
+@media (min-width: 900px) {
+    .modal-xlg {
+        width: 1200px !important;
+    }
+}
+
+table.treetable thead tr th,
+table.treetable tbody tr td {
+    font-weight: normal!important;
+    padding: 8px!important;
+    font-size: 13px!important;
+}
+
+.center-text {
+    text-align: center!important;
+}
+
+table#tableWorkProgress tr.leaf td {
+    cursor: move!important;
+}
+
+label.required:after {
+    display: inline-block;
+    color: red;
+    content: '\a0*';
+}
+
+label.ui-not-null:after {
+    content: " *";
+    margin-right: 5px;
+    color: red;
+}
+.borderColorWhite {
+    border-color: white!important;
+}
+.borderColorDark {
+    border-color: #2F4050!important;
+}
+.borderColorMuted {
+    border-color: #888888!important;
+}
+.borderColorGray {
+    border-color: #C2C2C3!important;
+}
+.borderColorBlueGray {
+    border-color: #607D8B!important;
+}
+.borderColorDanger {
+    border-color: #ed5565!important;
+}
+.borderColorLogo {
+    border-color: #C10019!important;
+}
+.border-avatar {
+    border: 12px dashed #ccc;
+}

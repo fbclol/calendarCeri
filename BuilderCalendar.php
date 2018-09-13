@@ -172,8 +172,25 @@ class BuilderCalendar
                 $aEvents = self::getEvents($_COOKIE['formation']);
             }
             return json_encode($aEvents);
+        } else {
+            try {
+                $aUrlIndexName = array_column($this->aFormations, 'export_url','name');
+                $r             = new HTTPRequest($aUrlIndexName["m2-alt-ecom"]);
+                $sCalendar     = $r->DownloadToString();
+            } catch (Exception $e) {
+                $sCalendar = null;
+            }
+
+            if ($sCalendar == "" || is_null($sCalendar)) {
+                // uniquement l'ouverture du tmp
+                $aEvents = self::getEvents($_COOKIE['formation']);
+            } else {
+                // écrire dans le un fichier puis ouverture
+                self::setContentFile($_COOKIE['formation'],$sCalendar);
+                $aEvents = self::getEvents($_COOKIE['formation']);
+            }
+            return json_encode($aEvents);
         }
-        return "";
     }
 }
 

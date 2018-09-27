@@ -1,15 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: remid
- * Date: 09/10/2017
- * Time: 11:57
- */
 
 require_once './BuilderCalendar.php';
 require_once './BuilderFormation.php';
 
-$oBuilderCalendar  = new BuilderCalendar("./listFormations.json");
+if (!array_key_exists('formation', $_COOKIE) === false) {
+    $oBuilderCalendar = new BuilderCalendar($_COOKIE['formation']);
+} else {
+    $oBuilderCalendar = new BuilderCalendar("m2-alt-ecom");
+}
 $jEvents           = $oBuilderCalendar->createCalendar();
 $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
 
@@ -21,7 +19,7 @@ $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/font-awesome.min.css" >
+    <link rel="stylesheet" href="./css/font-awesome.css" >
     <link rel='stylesheet' href='./css/fullcalendar.min.css' />
     <link rel='stylesheet' href='./css/jquery.qtip.min.css' />
     <link rel="stylesheet" href="./css/chosen.css">
@@ -34,6 +32,7 @@ $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
 
     <script src="./js/jquery-3.1.1.min.js"></script>
     <script src='./js/moment.min.js'></script>
+    <script src='./js/fontawesome.min.js'></script>
     <script src='./js/fullcalendar.min.js'></script>
     <script src='./js/locale-all.js'></script>
     <script src='./js/theme-chooser.js'></script>
@@ -143,16 +142,17 @@ $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
                     locale: 'fr',
                     defaultView: 'agendaWeek',
                     events: oData,
+                    timezone:"local",
 //        timeFormat: 'h:mm{ - h:mm}',
                     allDaySlot: false,
                     minTime: '08:00:00',
                     maxTime: '19:30:00',
                     weekends: false,
                     eventRender: function(event, element) {
-                        $(element).tooltip({title: event.title, placement:'bottom'});
+                        $(element).tooltip({title: event.title + event.location, placement:'bottom'});
                     },
                     eventAfterRender: function (event, element, view) {
-                        var dateEte = new Date('2017-10-29');
+                        var dateEte = new Date('2018-10-29');
 
                         var now = new Date();
                         if(now < dateEte) {now.setTime(now.getTime() + 2*60*60*1000);}
@@ -169,6 +169,12 @@ $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
                         else if (event.type === 'anglais') {element.addClass('cm-anglais');}
                         // cm
                         else {element.addClass('td-cm'); }
+
+                        console.log(element);
+                        element.find(".fc-time").html("<i class=\"fas fa-clock\"></i> "+element.find(".fc-time").html());
+                        element.find(".fc-title").html('<i class="fal fa-chalkboard-teacher"></i> '+element.find(".fc-title").html());
+                        element.find(".fc-time").after("<div><i class=\"fal fa-home\"></i> </i>"+event.location+"</div>");
+
                     },
                     eventAfterAllRender : function (view) {
                         if (bLegends === false) {
@@ -195,7 +201,7 @@ $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
         $('#selectFormation').on('change', function (evt, params) {
 
             $.ajax({
-                url: "formationAjax.php",
+                url: "ajaxSetCookieFormation.php",
                 data: {formation: $('#selectFormation option:selected').val()},
                 type: "POST",
                 dataType: 'html',
@@ -210,7 +216,7 @@ $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
         });
 
         $.ajax({
-            url: "fileFormation.php",
+            url: "ajaxCreateFileTimeDate.php",
             data: {formation: $('#selectFormation option:selected').val()},
             type: "POST",
             dataType: 'html',
@@ -258,17 +264,15 @@ $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'loadSalleDispo.php',
+                url: 'ajaxDisplaySalleDispo.php',
                 data: { site: site, date: date, duree: duree, debut: debut },
                 success: function(data) {
-                    console.log(data);
                     htmlTtile = "<div style='margin-top: 30px;' id='results'><h4 style='color: #4c4741;'>Salle(s) disponible(s) au "+site+" pour les critères choisis :</h4>";
-                    html ='';
+                    html      ='';
                     jQuery.each( data, function( i,val ) {
                         html += "<p><i class=\"fas fa-calendar-check\"></i> <span class='label td-cm'>"+val+"</span></p>";
                     });
                     html += '</div>';
-                    console.log(html);
                     console.log(data);
 
                     swal({

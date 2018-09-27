@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" xml:lang="fr" lang="fr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
     <link rel="stylesheet" href="./css/autocomplete.css" type="text/css" media="screen">
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-
     <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -31,49 +29,25 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-
 </head>
-
 <body>
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
-
             </div>
-
             <div class="col-md-12">
                 <h1 class="page-header"> <h1>Edite calendrier transforme to json</h1></h1>
                 <table id="datatable" class="table table-bordered table-striped dataTable no-footer" style="width:100%">
                 </table>
-
-                <button id="saveBtn" type="button" class="btn btn-primary active">Active Primary</button>
-
+                <button id="saveBtn" type="button" class="btn btn-primary active">sauvegarder le json</button>
             </div>
-
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
     $(document).ready(function() {
-//
-//        var oData = <?PHP //echo !empty($jEvents) ? $jEvents : '""' ?>//;
-//
-//                $.getJSON("three.htm", function(data) {
-//            // console.log("loadDataTable >>  "+JSON.stringify(data));
-//        })
-//            .fail(function( jqxhr, textStatus, error ) {
-//                var err = textStatus + ', ' + error;
-//                alert(err);
-//                console.log( "Request Failed: " + err);
-//            })
-//            .success(function(data){
-//                loadDataTable(data);
-//            });
-
-
-        // init datatbles
         table = $('#datatable').DataTable({
             "pagingType": "simple_numbers",
             "paging": false,
@@ -82,7 +56,6 @@
                 "dataSrc": ""
             },
             columns: [
-
                 {
                     "visible": true,
                     "width": '5%',
@@ -159,39 +132,21 @@
             ]
         });
 
-
         $('#datatable tbody').on('click','.addRow', function (evt, params) {
-//            e.preventDefault();
-            console.log('test');
-            var rowNode = table
-                .row.add(  {"name":"","export_url":"","optgroup":"","optdescription":""} )
-                .draw()
-                .node();
-
-            $( rowNode )
-                .css( 'color', 'red' )
-                .animate( { color: 'black' } );
+            var rowNode = table.row.add(  {"name":"","export_url":"","optgroup":"","optdescription":""} ).draw().node();
+            $( rowNode ).css( 'color', 'red' ).animate( { color: 'black' } );
         });
 
         $('#datatable tbody').on('click','.deleteRow', function (evt, params) {
-            console.log($(this).parents('tr'));
             table.row($(this).parents('tr')).remove().draw( false );
         });
 
         $('#saveBtn').on('click', function (evt, params) {
-
-//            aFormationNew = editableGrid.data.map(function (aFormation, label) {
-//
-//                array = {"name" : aFormation.columns[0],"export_url" : aFormation.columns[1],"optgroup" : aFormation.columns[2],"optdescription" : aFormation.columns[3]};
-//                return array;
-//            });
             var aFormationNew = table.data().toArray();
-
             var recursiveEncoded = encodeURI(JSON.stringify(aFormationNew) );
 
-
             $.ajax({
-                url: "updateFileJson.php",
+                url: "ajaxUpdateListFormation.php",
                 data: {data_json: recursiveEncoded},
                 type: "POST",
                 dataType: 'html',
@@ -227,10 +182,7 @@
             oData['optdescription'] = $(this).val();
             table.row($(this).parents("tr")).data(oData).draw();
         });
-
     });
 </script>
 </body>
-
 </html>
-

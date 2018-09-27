@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: franck
- * Date: 19/09/2017
- * Time: 20:20
- */
 class HTTPRequest
 {
     var $_fp;        // HTTP socket
@@ -45,7 +39,7 @@ class HTTPRequest
     }
 
     // constructor
-    function HTTPRequest($url)
+    function __construct($url)
     {
         $this->_url = $url;
         $this->_scan_url();

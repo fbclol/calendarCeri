@@ -6,37 +6,35 @@
  * Date: 19/09/2017
  * Time: 20:16
  */
-class BuilderFormation
+
+require_once './IBuilder.php';
+require_once './TraitementFile.php';
+class BuilderFormation extends TraitementFile implements IBuilder
 {
-    public $aFormations =[];
+    protected $nameFile = "listFormations";
 
-    function __construct($nameFile)
+    function __construct()
     {
-        $this->aFormations = json_decode(file_get_contents($nameFile), true);
+        $this->path = $this->nameFile.".json";
+        $this->aFormations = self::getContentFile();
     }
-
-
-    public static function setContentFile($json_date) {
-        $handle = fopen("./listFormations.json", "w+");
-        fwrite($handle, $json_date);
-        fclose($handle);
-    }
-
 
     public function toHTMLOption() {
         $html = '<option value=""></option>'."\n";
-        $aListOptgroup = array_unique(array_column($this->aFormations, 'optgroup'));
+        $aListOptgroup = array_unique(array_column($this->getFormations(), 'optgroup'));
 
         foreach( $aListOptgroup  as $key => $sDiplome) {
             $html .= "<optgroup label=".$sDiplome.">";
 
-            foreach( $this->aFormations  as $key1 => $sformation) {
-                if ($sDiplome === $sformation['optgroup']) {
-                    $html .= "<option value='".$sformation['name']."'>".$sformation['optdescription']."</option>";
+            foreach( $this->aFormations  as $key1 => $sFormation) {
+                if ($sDiplome === $sFormation['optgroup']) {
+                    $html .= "<option value='".$sFormation['name']."'>".$sFormation['optdescription']."</option>";
                 }
             }
             $html .= "</optgroup>";
         }
         return $html;
     }
+
+
 }

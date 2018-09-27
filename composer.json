@@ -1,0 +1,11 @@
+{
+  "homepage" : "http://sabre.io/vobject/",
+  "license" : "BSD-3-Clause",
+  "require" : {
+    "php"          : ">=5.5",
+    "ext-mbstring" : "*",
+    "sabre/xml"    : ">=1.5 <3.0",
+    "sabre/vobject": "~4.1",
+    "phpcollection/phpcollection": "~0.5.0"
+  }
+}

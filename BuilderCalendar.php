@@ -68,6 +68,67 @@ class BuilderCalendar  extends TraitementFile implements IBuilder
         return HelperFranck::object_to_array($aEventsBis);
     }
 
+    /**
+     * @return int
+     */
+    public function getEventsToSchedule()
+    {
+        $aEvents =  $this->getEvents();
+        $ta=[];
+
+        $a['type'] =  2;
+        $a['size'] =  1;
+        $a['fill'] =  true;
+        $a['minimumSize'] =  0;
+        $a['repeatCovers'] = true;
+        $a['listTimes'] =  false;
+        $a['eventsOutside'] =  false;
+        $a['updateRows'] =  false;
+        $a['updateColumns'] =  false;
+        $a['around'] =  1543618800000;
+
+        foreach ($aEvents as $aEvent) {
+
+            $atest{'data'}['title']       = $aEvent['title'];
+            $atest['data']['description'] = "frege";
+            $atest['data']['location']    = $aEvent['location'];
+            $atest['data']['color']       = "#1976d2";
+            $atest['data']['forecolor']   = "#ffffff";
+            $atest['data']['calendar']    = "ceri";
+            $atest['data']['busy']        = "false";
+            $atest['data']['icon']        = "card_travel";
+            ;
+            $dateStart = new DateTime($aEvent['start']);
+            $dateEnd = new DateTime($aEvent['end']);
+
+
+            $dteDiff     = $dateStart->diff($dateEnd);
+            $dteDiffHeur = $dteDiff->format("%H");
+
+            $dteDiffMinutes  = $dteDiff->format("%I");
+            $dteDiffMinutes += $dteDiffHeur * 60;
+
+            $atest['schedule']['times']        = [$dateStart->format("H:i")];
+            $atest['schedule']['duration']     = $dteDiffMinutes;
+            $atest['schedule']['durationUnit'] = "minutes";
+            $atest['schedule']['dayOfMonth']   = [$dateStart->format("d")];
+            $atest['schedule']['month']        = [$dateStart->format("m")];
+            $atest['schedule']['year']         = [$dateStart->format("Y")];
+
+
+            $ta["data"] = (object) $atest['data'];
+            $ta["schedule"] = (object) $atest['schedule'];
+
+
+            $a["events"][]=$ta;
+
+        }
+
+
+        return json_encode($a);
+    }
+
+
     public function createCalendar()
     {
         try {

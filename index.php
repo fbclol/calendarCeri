@@ -6,7 +6,7 @@ require_once './BuilderFormation.php';
 if (!array_key_exists('formation', $_COOKIE) === false) {
     $oBuilderCalendar = new BuilderCalendar($_COOKIE['formation']);
 } else {
-    $oBuilderCalendar = new BuilderCalendar("m2-alt-ecom");
+    $oBuilderCalendar = new BuilderCalendar("M2IL-Alt");
 }
 $jEvents           = $oBuilderCalendar->createCalendar();
 $oBuilderFormation = $oBuilderCalendar->oBuilderFormation;
